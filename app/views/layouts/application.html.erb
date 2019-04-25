@@ -8,12 +8,17 @@
     <%= javascript_include_tag 'application',
                                'data-turbolinks-track': 'reload' %>
     <%= render 'layouts/shim' %>
+    
+    <!-- スマートフォン用設定 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  
   </head>
+
   <body>
     <%= render 'layouts/header' %>
-    <div class="container">
+    <div>
       <%= yield %>
-      <%= render 'layouts/footer' %>
     </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

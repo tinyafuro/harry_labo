@@ -1,0 +1,213 @@
+//自サイト用の専用配色
+$harry-color1: #d0eeab;
+$harry-color2: #86e6c8;
+$harry-color3: #4db5c8;
+
+/*================================================
+ *  ハンバーガーメニューアイコン
+ ================================================*/
+
+ #nav-toggle {
+  position: absolute;   // 絶対位置
+  bottom: 5%;           // 下に固定
+  right: 3%;            // 左に固定
+  height: 32px;
+  z-index: 9999;
+	cursor: pointer;      // マウスカーソルをリンクカーソルに変更
+	
+  div {
+    position: relative; // 相対位置
+    width: 36px;
+  }
+  span {
+    width: 80%;
+    height: 2px;
+    left: 0;
+    display: block;       // 要素を上から下へ並べる
+    background: #333;
+    position: absolute;
+    transition: transform .6s ease-in-out, top .5s ease;
+    
+    /* ３本線の縦位置の指定 */
+    &:nth-child(1) {
+      top: 2px;
+    }
+    &:nth-child(2) {
+      top: 14px;
+    }
+    &:nth-child(3) {
+      top: 26px;
+    }
+  }
+
+  /* マウスオーバー時の３本線の変化 */
+  &:hover span:nth-child(1) {
+    top: 6px;
+  }
+  &:hover span:nth-child(3) {
+    top: 22px;
+  }
+
+}
+
+/* クリック時のメニューアイコン */
+.open {
+  #nav-toggle span {
+    background: #fff;
+    
+    &:nth-child(1) {
+      top: 15px;
+      transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+      top: 15px;
+      width: 0;
+      left: 50%;
+    }
+    &:nth-child(3) {
+      top: 15px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+/*================================================
+ * メニューウインドウ
+ ================================================*/
+
+#nav-window {
+  background: #000;
+	color: #fff;
+	position: fixed;          // ボックスの配置を絶対位置で設定
+	top: 0;
+	left: 0;
+	right: 0;
+  bottom: 0;
+	z-index: 990;
+	text-align: center;
+	display: flex;            // 要素を並列に並べる
+	visibility: hidden;       // ボックスを非表示
+  flex-direction: column;   // フレックスコンテナ内のアイテムをブロック軸の方向に並べる
+  // フレックスボックス（flexbox）とは、大きさがフレキシブルに伸縮するボックス
+  justify-content: center;  // フレックスコンテナ内を中央揃え
+  align-items: center;      // 子要素を中央寄せにする
+	font-size: 29px;
+	opacity: 0;
+  transition: opacity .6s ease, visibility .6s ease;
+  // border: 1px solid blue;
+  
+  nav {
+    position: fixed;
+    top: 20%;
+    // border: 1px solid red;
+  }
+}
+
+/* メニューが閉じられるときのスタイルとなる */
+#nav-window {
+  a {
+    display: block;
+    color: #fff;
+    text-decoration: none;        // テキストのスタイルは無し
+    padding: 10px 0;
+    transition: color .6s ease;
+    // border: 1px solid orange;
+    
+    &:hover {
+      color: $harry-color1;
+    }
+  }
+  
+  ul {
+    list-style: none;                 // リストの先頭に表示するマーカー無し
+    
+    li {
+      display: inline-block;          //メニューを横に並べる
+      padding: .2em .7em;
+      opacity: 0;
+      transform: translateX(200px);   // 要素の表示位置をX方向（右）へ移動
+      transition:  transform .6s ease, opacity .2s ease;
+
+      // 各メニュー表示の遅延設定
+      &:nth-child(2) {
+        transition-delay: .15s;
+      }
+      &:nth-child(3) {
+        transition-delay: .3s;
+      }
+      &:nth-child(4) {
+        transition-delay: .45s;
+      }
+      &:nth-child(5) {
+        transition-delay: .6s;
+      }
+      &:nth-child(6) {
+        transition-delay: .75s;
+      }
+      &:nth-child(7) {
+        transition-delay: .9s;
+      }
+    }
+  }
+} 
+
+/* クリック時のメニューウインドウ */
+.open {
+  #nav-window {
+    visibility: visible;    //ボックスを表示
+    opacity: 1;
+  }
+
+  #nav-window li {
+    opacity: 1;
+    transform: translateX(0);     // 要素の表示位置をX方向（左）へ移動
+    transition:  transform 1s ease, opacity .9s ease;
+  }
+}
+
+/*================================================
+ * スマートフォン向けスタイル
+ * メニューアイコンの位置調整のみ
+ ================================================*/
+@media screen and (max-width:896px) {
+
+  #nav-toggle {
+    bottom: 30%;
+
+    /* マウスオーバー時に変化させないようにする */
+    &:hover span:nth-child(1) {
+      top: 2px;
+    }
+    &:hover span:nth-child(3) {
+      top: 26px;
+    }
+  }
+
+  /* メニューを縦に並べる */
+  #nav-window nav ul li {
+    display: block;
+  }
+
+  /* クリック時のメニューアイコン */
+  .open {
+    #nav-toggle span {
+      background: #fff;
+
+      &:nth-child(1) {
+        top: 15px;
+        transform: rotate(45deg);
+      }
+      &:nth-child(2) {
+        top: 15px;
+        width: 0;
+        left: 50%;
+      }
+      &:nth-child(3) {
+        top: 15px;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+}
