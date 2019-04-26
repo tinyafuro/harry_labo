@@ -49,5 +49,25 @@ $(function() {
     })
     .setTween(leftSlideTween)
     .addTo(controller);
+
+    
+  // グリッドコンテンツを順番に出現
+  // タイムライン fromTo(要素指定、時間、初期値、変化後、前倒し時間)
+  var tl = new TimelineMax();
+  tl.add( TweenLite.fromTo(".grid-block-1", 1, {y:30,opacity:0 }, {ease: Power4.easeOut,y:0,opacity:1 }) );
+  tl.add( TweenLite.fromTo(".grid-block-2", 1, {y:30,opacity:0 }, {ease: Power4.easeOut,y:0,opacity:1 }), "-=0.5");
+  tl.add( TweenLite.fromTo(".grid-block-3", 1, {y:30,opacity:0 }, {ease: Power4.easeOut,y:0,opacity:1 }), "-=0.5");
+  tl.add( TweenLite.fromTo(".grid-block-4", 1, {y:30,opacity:0 }, {ease: Power4.easeOut,y:0,opacity:1 }), "-=0.5");
+  tl.add( TweenLite.fromTo(".grid-block-5", 1, {y:30,opacity:0 }, {ease: Power4.easeOut,y:0,opacity:1 }), "-=0.5");
+  tl.add( TweenLite.fromTo(".grid-block-6", 1, {y:30,opacity:0 }, {ease: Power4.easeOut,y:0,opacity:1 }), "-=0.5");
+
+  var gridContainer = new ScrollMagic.Scene({
+        triggerElement: ".grid-block", 
+        triggerHook: 'onEnter',
+        offset : 0,
+        reverse: false,
+    })
+    .setTween(tl)
+    .addTo(controller);
     
 });

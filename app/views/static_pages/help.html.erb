@@ -68,51 +68,97 @@
 </ul>
 
 
+<!-- 領域全体 -->
+<section class="non-background-area grid-block">
+<%# <section class="bg-white py-4 font-sans block8"> %>
 
-<section class="bg-white py-4 font-sans block8">
-  <div class="container max-w-xl m-auto flex flex-wrap items-center justify-start">
+  <!-- グリッド表示 -->
+  <div class="container grid-container">
+  <%# <div class="container max-w-xl m-auto flex flex-wrap items-center justify-start"> %>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3 block8-1">
-      <div class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"> <img class="w-full" src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="Sunset in the mountains">
-        <div class="p-6 flex flex-col justify-between ">
-          <h3 class="font-medium text-grey-darkest mb-4 leading-normal">Desktop Publishing Software like Aldus PageMaker</h3>
-          <p class="inline-flex items-center"> <span class="text-grey-dark text-sm">Read More</span> </p>
+    <!-- 記事1 -->
+    <div class="grid-content md:w-1/2 lg:w-1/3 grid-block-1">
+    <%# <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3 block8-1"> %>
+      <!-- イメージ -->
+      <div class="grid-content-image hover:shadow-raised hover:translateY-2px transition">
+        <%# <img src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="01"> %>
+        <%= image_tag "harry01.png", alt: "Harry" %>
+      <%# <div class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"> <img class="w-full" src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="Sunset in the mountains"> %>
+
+        <!-- テキスト -->
+        <div class="grid-content-text">
+          <h3>Desktop Publishing Software like Aldus PageMaker</h3>
+          <p><span>Read More</span></p>
         </div>
+        <%# <div class="p-6 flex flex-col justify-between "> %>
+          <%# <h3 class="font-medium text-grey-darkest mb-4 leading-normal">Desktop Publishing Software like Aldus PageMaker</h3> %>
+          <%# <p class="inline-flex items-center"> <span class="text-grey-dark text-sm">Read More</span> </p> %>
+        <%# </div> %>
+
       </div>
     </div>
 
-    <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3 block8-2">
-      <div class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"> <img class="w-full" src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="Sunset in the mountains">
-        <div class="p-6 flex flex-col justify-between ">
-          <h3 class="font-medium text-grey-darkest mb-4 leading-normal">Desktop Publishing Software like Aldus PageMaker</h3>
-          <p class="inline-flex items-center"> <span class="text-grey-dark text-sm">Read More</span> </p>
+    <!-- 記事2 -->
+    <div class="grid-content md:w-1/2 lg:w-1/3 grid-block-2">
+      <!-- イメージ -->
+      <div class="grid-content-image hover:shadow-raised hover:translateY-2px transition">
+        <%= image_tag "harry01.png", alt: "Harry" %>
+        <!-- テキスト -->
+        <div class="grid-content-text">
+          <h3>Desktop Publishing Software like Aldus PageMaker</h3>
+          <p><span>Read More</span></p>
         </div>
       </div>
     </div>
   
-    <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3 block8-3">
-      <div class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"> <img class="w-full" src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="Sunset in the mountains">
-        <div class="p-6 flex flex-col justify-between ">
-          <h3 class="font-medium text-grey-darkest mb-4 leading-normal">Desktop Publishing Software like Aldus PageMaker</h3>
-          <p class="inline-flex items-center"> <span class="text-grey-dark text-sm">Read More</span> </p>
+    <!-- 記事3 -->
+    <div class="grid-content md:w-1/2 lg:w-1/3 grid-block-3">
+      <!-- イメージ -->
+      <div class="grid-content-image hover:shadow-raised hover:translateY-2px transition">
+        <%= image_tag "harry01.png", alt: "Harry" %>
+        <!-- テキスト -->
+        <div class="grid-content-text">
+          <h3>Desktop Publishing Software like Aldus PageMaker</h3>
+          <p><span>Read More</span></p>
         </div>
       </div>
     </div>
   
-    <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3 block8-4">
-      <div class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"> <img class="w-full" src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="Sunset in the mountains">
-        <div class="p-6 flex flex-col justify-between ">
-          <h3 class="font-medium text-grey-darkest mb-4 leading-normal">Desktop Publishing Software like Aldus PageMaker</h3>
-          <p class="inline-flex items-center"> <span class="text-grey-dark text-sm">Read More</span> </p>
+    <!-- 記事4 -->
+    <div class="grid-content md:w-1/2 lg:w-1/3 grid-block-4">
+      <!-- イメージ -->
+      <div class="grid-content-image hover:shadow-raised hover:translateY-2px transition">
+        <%= image_tag "harry01.png", alt: "Harry" %>
+        <!-- テキスト -->
+        <div class="grid-content-text">
+          <h3>Desktop Publishing Software like Aldus PageMaker</h3>
+          <p><span>Read More</span></p>
         </div>
       </div>
     </div>
   
-    <div class="w-full md:w-1/2 lg:w-1/3 flex flex-col mb-8 px-3 block8-5">
-      <div class="overflow-hidden bg-white rounded-lg shadow hover:shadow-raised hover:translateY-2px transition"> <img class="w-full" src="https://stitches-cdn.hyperyolo.com/demo-bg.png" alt="Sunset in the mountains">
-        <div class="p-6 flex flex-col justify-between ">
-          <h3 class="font-medium text-grey-darkest mb-4 leading-normal">Desktop Publishing Software like Aldus PageMaker</h3>
-          <p class="inline-flex items-center"> <span class="text-grey-dark text-sm">Read More</span> </p>
+    <!-- 記事5 -->
+    <div class="grid-content md:w-1/2 lg:w-1/3 grid-block-5">
+      <!-- イメージ -->
+      <div class="grid-content-image hover:shadow-raised hover:translateY-2px transition">
+        <%= image_tag "harry01.png", alt: "Harry" %>
+        <!-- テキスト -->
+        <div class="grid-content-text">
+          <h3>Desktop Publishing Software like Aldus PageMaker</h3>
+          <p><span>Read More</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 記事6 -->
+    <div class="grid-content md:w-1/2 lg:w-1/3 grid-block-6">
+      <!-- イメージ -->
+      <div class="grid-content-image hover:shadow-raised hover:translateY-2px transition">
+        <%= image_tag "harry01.png", alt: "Harry" %>
+        <!-- テキスト -->
+        <div class="grid-content-text">
+          <h3>Desktop Publishing Software like Aldus PageMaker</h3>
+          <p><span>Read More</span></p>
         </div>
       </div>
     </div>
