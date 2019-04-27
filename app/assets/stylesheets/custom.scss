@@ -3,9 +3,9 @@
 
 
 //自サイト用の専用配色
-$harry-color1: #d0eeab;
-$harry-color2: #86e6c8;
-$harry-color3: #4db5c8;
+$my-color1: #d0eeab;
+$my-color2: #86e6c8;
+$my-color3: #4db5c8;
 
 
 /*================================================
@@ -17,7 +17,7 @@ body {
   padding: 250px 0px 0px 0px;
   color: white;
   overflow-x: hidden;
-  background: $harry-color1 image-url("bg.png") fixed  0 0;
+  background: $my-color1 image-url("bg.png") fixed  0 0;
 }
 
 #contents {
@@ -127,7 +127,7 @@ header {
       letter-spacing: 1px;
       transition: .25s ease-in-out;
       &:hover {
-        color: $harry-color3;
+        color: $my-color3;
       }
     }
 
@@ -144,7 +144,7 @@ header {
   width: 100%;
   height: 120%;
   z-index: -1;
-  background: $harry-color2;
+  background: $my-color2;
   transition: .4s ease-in-out;
 }
 
@@ -169,7 +169,7 @@ header {
   width:100%;
   padding: 20px 10px 10px 10px;
   text-align:center;
-  background: $harry-color2;
+  background: $my-color2;
   p {
     color: white;
     font-size: calc(50% + 0.5vw);
@@ -240,7 +240,7 @@ header {
 .non-background-area {
   width:100%;
   padding: 10px;
-  background: $harry-color2
+  background: $my-color2
 }
 
 /* 通常のブロック */
@@ -291,7 +291,7 @@ header {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
   img {
     width: 100%;
-    background-color: $harry-color1;
+    background-color: $my-color1;
   }
 }
 
@@ -405,6 +405,6 @@ header {
 
   footer {
     padding: 10px 0px 0px 0px;
-    border: 1px solid $harry-color2;
+    border: 1px solid $my-color2;
   }
 }

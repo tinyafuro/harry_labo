@@ -1,7 +1,7 @@
 //自サイト用の専用配色
-$harry-color1: #d0eeab;
-$harry-color2: #86e6c8;
-$harry-color3: #4db5c8;
+$my-color1: #d0eeab;
+$my-color2: #86e6c8;
+$my-color3: #4db5c8;
 
 /*================================================
  *  ハンバーガーメニューアイコン
@@ -115,7 +115,7 @@ $harry-color3: #4db5c8;
     // border: 1px solid orange;
     
     &:hover {
-      color: $harry-color1;
+      color: $my-color1;
     }
   }
   
