@@ -1,5 +1,25 @@
 <header style="z-index:1000;">
 
+  <script>
+    // ドロップダウンメニュー 
+    $(function(){
+
+      $("ul.sub").hide();
+
+      // マウスオーバー時
+      $("ul.menu li").hover(function(){
+        // this -> 「ul.menu li ul」
+        // not(:animated) -> アニメーション中のものに対しては処理しない
+        $("ul.sub:not(:animated)", this).slideDown();
+      
+      // マウスリリース時
+      }, function(){
+        $("ul.sub",this).slideUp();
+      });
+
+    });
+  </script>
+
   <!-- ヘッダー背景 -->
   <div class="nav-bg"></div>
   
@@ -11,12 +31,26 @@
   <!-- ヘッダーナビゲーション -->
   <div id="nav-header">
     <nav>
-      <ul>
+      <ul class="menu">
         <li><%= link_to "Home",   root_path %></li>
         <li><%= link_to "News",   help_path %></li>
         <li><%= link_to "About",   '#' %></li>
         <li><%= link_to "Works",   '#' %></li>
         <li><%= link_to "Contact",   '#' %></li>
+
+        <!-- ドロップダウンメニュー -->
+        <% if logged_in? %>
+          <li><%= current_user.name %>
+            <ul class="sub">
+              <li><%= link_to "Profile", current_user, method: :delete %></li>
+              <li><%= link_to "Settings", '#', method: :delete %></li>
+              <li><%= link_to "Logout", logout_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "| LOG IN", login_path %></li>
+        <% end %>
+
       </ul>
     </nav>
   </div>
@@ -42,5 +76,7 @@
       </ul>
     </nav>
   </div>
+
+
 
 </header>

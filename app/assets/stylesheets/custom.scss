@@ -117,14 +117,11 @@ header {
         padding: .2em .7em;
       }
     }
-
     a {
       width: 100%;
       height: 100%;
       color: black;
       text-decoration: none;
-      font-weight: bold;
-      letter-spacing: 1px;
       transition: .25s ease-in-out;
       &:hover {
         color: $my-color3;
@@ -159,6 +156,39 @@ header {
   top: 0;
   opacity: 1;
 }
+
+
+/*================================================
+ *  ドロップダウンメニュー
+ ================================================*/
+
+ul.menu li {
+  position: relative;       // 親要素を基準にした位置
+  display: block;
+  color: black;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: .25s ease-in-out;
+  &:hover {
+    color: $my-color3;
+  }
+}
+ul.sub {
+  position: absolute;       // Window（画面）の左上を基準にした位置
+  margin-left: -10%;
+  transition: .75s ease-in-out;  
+}
+
+/* ヘッダー背景がない場合はサブメニュー背景も透明 */
+.sub-bgHidden {
+  background-color: transparent;
+}
+
+/* ヘッダー背景がある場合はサブメニューの背景あり */
+.sub-bgVisible {
+  background-color: $my-color2;
+}
+
 
 /*================================================
  *  フッター
@@ -275,7 +305,8 @@ header {
 
 /* グリッドコンテンツ */
 .grid-content {
-  width: 100%;
+  // width: 100%;
+  width: 33.33333%;
   display: flex;
   flex-direction: column;
   margin-bottom: 2.5rem;
@@ -302,7 +333,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   h3 {
-    font-weight: 500;
+    font-weight: bold;
     color: #3d4852;
     margin-bottom: 1rem;
     line-height: 1.5;
@@ -318,6 +349,66 @@ header {
 }
 
 
+/*================================================
+ *  インプットフォーム
+ ================================================*/
+
+ .input-form {
+  position: relative;
+	width: 50%;
+  margin: -10% 25% 10px 25%;
+
+  h1 {
+    margin: 8px;
+  }
+
+  label {
+    margin-top:10px;
+    margin-left:10px;
+    font-size: calc(80% + 0.5vw); // レスポンシブな文字サイズ
+    color: black;
+  }
+
+  input {
+    width: 100%;
+    height: 40px;
+    font-size: calc(50% + 0.6vw);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2.5px;
+    margin: 4px 0;
+    padding-left: 20px;
+    border: 2px solid $my-color3;
+    border-radius: 32px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-color: #da3c41;
+  }
+
+  input[type=submit] {
+    width: 60%;
+    margin: 40px 20%;
+    font-size: calc(50% + 0.5vw); // レスポンシブな文字サイズ
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: $my-color3;
+    border: 2px solid $my-color3;
+    background-color: white;
+    transition: .4s;
+  }
+
+  input[type=submit]:hover {
+    font-size: calc(50% + 0.4vw); // レスポンシブな文字サイズ
+    color: white;
+    background-color: $my-color3;
+  }
+}
+
+
 /* Parallax.jsのクラス */
 .parallax-window {
   min-height: 800px;
@@ -325,9 +416,12 @@ header {
 }
 
 
+
+
 /*================================================
  *  スマートフォン向けスタイル
  ================================================*/
+
  @media screen and (max-width:896px) {
 
   html {
@@ -407,4 +501,18 @@ header {
     padding: 10px 0px 0px 0px;
     border: 1px solid $my-color2;
   }
+
+  .grid-content {
+    width: 50%;
+  }
+
+}
+
+
+@media screen and (max-width: 768px) {
+
+  .grid-content {
+    width: 100%;
+  }
+
 }
