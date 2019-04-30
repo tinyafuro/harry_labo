@@ -1,0 +1,32 @@
+<%= form_for(@user, url: yield(:url)) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <%= f.label :subject %>
+    <%= f.text_field :subject %>
+  </div>
+
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <%= f.submit "Save changes" %>
+
+<% end %>
