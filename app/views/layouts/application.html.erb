@@ -11,7 +11,24 @@
     
     <!-- スマートフォン用設定 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  
+
+    <!--
+    <script type="text/javascript" src="assets/bg_animation.js"></script>
+    <script type="text/javascript" src="assets/click_scroll.js"></script>
+    <script type="text/javascript" src="assets/humbrager_menu.js"></script>
+    <script type="text/javascript" src="assets/scroll_animation.js"></script>
+    <script type="text/javascript" src="assets/sticky_header.js"></script>
+    -->
+
+    <%= javascript_include_tag 'scrollmagic/uncompressed/ScrollMagic.js' %>
+    <%= javascript_include_tag 'scrollmagic/uncompressed/plugins/animation.gsap.js' %>
+    <%= javascript_include_tag 'scrollmagic/uncompressed/plugins/animation.velocity.js' %>
+    <%= javascript_include_tag 'scrollmagic/uncompressed/plugins/debug.addIndicators.js' %>
+    <%= javascript_include_tag 'TweenMax.min.js' %>
+    <%= javascript_include_tag 'bg_animation' %>
+    <%= javascript_include_tag 'humbrager_menu' %>
+    <%= javascript_include_tag 'sticky_header' %>
+
   </head>
 
   <body>

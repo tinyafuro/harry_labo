@@ -1,5 +1,6 @@
 // 背景イメージのポジションを常に変化させる
 $(function() {
+  console.log("bg_animation.js起動！！！")
 
   var bg_x = 0;
   var bg_y = 0;

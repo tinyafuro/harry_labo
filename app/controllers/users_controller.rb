@@ -9,6 +9,8 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @articles = @user.article.paginate(page: params[:page])   # 投稿記事一覧用変数
+    @article = current_user.article.build if logged_in?       # 記事投稿用の空インスタンス変数
   end
 
   def new
@@ -55,15 +57,6 @@ class UsersController < ApplicationController
   end
 
   # beforeアクション
-
-  # ログイン済みユーザーかどうか確認
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = "Please log in."
-      redirect_to login_url
-    end
-  end
 
   # 正しいユーザーかどうか確認
   def correct_user

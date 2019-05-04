@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get  '/help',    to: 'static_pages#help'
   get  '/about',   to: 'static_pages#about'
   get  '/contact', to: 'static_pages#contact'
+  get  '/subject', to: 'static_pages#subject'       # 教科ネタのHome
+  get  '/carshare', to: 'static_pages#carshare'     # カーシェアのHome
 
   get  '/signup',  to: 'users#new'
   post '/signup',  to: 'users#create'
@@ -14,5 +16,7 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   
   resources :users
+
+  resources :articles, only: [:create, :destroy]
 
 end

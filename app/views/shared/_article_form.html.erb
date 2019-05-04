@@ -1,0 +1,9 @@
+<!-- 投稿フォーム -->
+<%= form_for(@article) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_area :title, articleholder: "article Title..." %>
+    <%= f.text_area :body, articleholder: "article Body..." %>
+  </div>
+  <%= f.submit "Post", class: "btn btn-primary" %>
+<% end %>

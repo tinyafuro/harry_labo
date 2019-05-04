@@ -1,0 +1,177 @@
+//自サイト用の専用配色
+$my-color1: #d0eeab;
+$my-color2: #86e6c8;
+$my-color3: #4db5c8;
+
+
+
+// /* communities */
+// .articles {
+//   list-style: none;
+//   padding: 0;
+//   li {
+//     padding: 10px 0;
+//     border-top: 1px solid #e8e8e8;
+//   }
+//   .user {
+//     margin-top: 5em;
+//     padding-top: 0;
+//   }
+//   .article_title {
+//     display: block;
+//     margin-left: 60px;
+//   }
+//   .article_body {
+//     display: block;
+//     margin-left: 60px;
+//     img {
+//       display: block;
+//       padding: 5px 0;
+//     }
+//   }
+//   .article_subject {
+//     display: block;
+//     margin-left: 60px;
+//   }
+//   .gravatar {
+//     float: left;
+//     margin-right: 10px;
+//     margin-top: 5px;
+//   }
+// }
+// aside {
+//   textarea {
+//     height: 100px;
+//     margin-bottom: 5px;
+//   }
+// }
+// span.picture {
+//   margin-top: 10px;
+//   input {
+//     border: 0;
+//   }
+// }
+
+
+/*================================================
+ *  Subjectのグリッドコンテンツ内のボタン
+ ================================================*/
+
+.subject-article-btn {
+  width: 80%;
+  height: 40px;
+  margin: 0% 10%;
+  font-family: sans-serif;
+  font-size: calc(50% + 0.5vw);
+  font-weight: bold;
+  color: $my-color3;
+  letter-spacing: 2px;
+  border: 2px solid $my-color3;
+  border-radius: 32px;
+  background-color: white;
+  outline: none;
+  box-sizing: border-box;
+  transition: .4s;
+
+  &:hover {
+    font-size: calc(50% + 0.4vw);
+    color: white;
+    background-color: $my-color3;
+  }
+}
+
+
+/*================================================
+ *  投稿記事のリスト
+ ================================================*/
+
+.articles {
+  
+  width: 100%;
+  margin: 50px 0% 10px 0%;
+  padding: 0;
+  list-style: none;
+  border: 2px solid $my-color2;
+  font-size: calc(50% + 0.6vw);
+  font-family: sans-serif;
+  color: black;
+  background: $my-color2;
+
+  li {
+    margin: 50px 100px;
+    padding: 20px 30px;
+    font-size: calc(60% + 0.6vw);
+    border: 2px solid $my-color2;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  }
+
+  .article_title {
+    display: block;
+    margin: 0px 60px;
+    font-size: calc(100% + 0.6vw);
+  }
+
+  .article_body {
+    display: block;
+    margin: 10px 60px;
+    font-size: calc(45% + 0.6vw);
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+
+  .article_subject {
+    display: block;
+    width: 80%;
+    margin: 0px 10%;
+    padding: 5px 8px;
+    font-size: calc(45% + 0.6vw);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 1.5rem;
+    background-color: $my-color3;
+  }
+
+  .user {
+    display: block;
+    width: 80%;
+    margin: 10px 10% 3px 10%;
+    font-size: calc(45% + 0.6vw);
+    text-align: center;
+  }
+
+  .article_update, .article_delete {
+    width: 80%;
+    height: 32px;
+    margin: 0px 10% 20px 10%;
+    padding: 4px 8px;
+    font-family: sans-serif;
+    font-size: calc(50% + 0.5vw);
+    font-weight: bold;
+    color: $my-color3;
+    text-align: center;
+    letter-spacing: 2px;
+    border: 2px solid $my-color3;
+    border-radius: 16px;
+    background-color: white;
+    outline: none;
+    box-sizing: border-box;
+    transition: .4s;
+  
+    &:hover {
+      font-size: calc(50% + 0.4vw);
+      color: white;
+      background-color: $my-color3;
+    }
+  }
+
+  .article_delete {
+    margin: 0px 10% 0px 10%;
+  }
+
+}

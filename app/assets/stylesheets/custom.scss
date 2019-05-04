@@ -162,21 +162,26 @@ header {
  *  ドロップダウンメニュー
  ================================================*/
 
-ul.menu li {
-  position: relative;       // 親要素を基準にした位置
-  display: block;
-  color: black;
-  font-weight: bold;
-  letter-spacing: 1px;
-  transition: .25s ease-in-out;
-  &:hover {
-    color: $my-color3;
+ul.menu {
+  li {
+    position: relative;       // 親要素を基準にした位置
+    display: block;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: .25s ease-in-out;
+    &:hover {
+      color: $my-color3;
+    }
+    // border: 1px solid blue;
   }
 }
+
 ul.sub {
   position: absolute;       // Window（画面）の左上を基準にした位置
-  margin-left: -10%;
+  margin-left: -3rem;
   transition: .75s ease-in-out;  
+  // border: 1px solid red;
 }
 
 /* ヘッダー背景がない場合はサブメニュー背景も透明 */
