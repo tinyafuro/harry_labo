@@ -1,0 +1,22 @@
+<%= form_for(@article, url: yield(:url)) do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <div>
+    <%= f.label  "タイトル" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div>
+    <%= f.label "教科" %>
+    <%= f.text_field :subject %>
+  </div>
+
+  <div>
+    <%= f.label "詳細説明" %>
+    <%= f.text_area :body %>
+  </div>
+
+  <%= f.submit yield(:button_text) %>
+
+<% end %>

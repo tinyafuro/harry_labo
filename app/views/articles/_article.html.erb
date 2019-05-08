@@ -1,7 +1,4 @@
 <li id="article-<%= article.id %>">
-  <!--
-  <%= link_to gravatar_for(article.user, size: 50), article.user %>
-  -->
 
   <div class="col-md-2">
     <% if @search == "すべての投稿" %>
@@ -16,7 +13,10 @@
   </div>
 
   <div class="col-md-2">
-    <div class="article_update">変 更</div>
+    <!-- 詳細情報ボタン -->
+    <div class="article_update">
+      <%= link_to "詳細を見る", article %>
+    </div>
     <% if current_user?(article.user) %>
       <div class="article_delete">
         <%= link_to "削 除", article, method: :delete, data: { confirm: "You sure?" } %>
@@ -24,5 +24,4 @@
     <% end %>
   </div>
   
-
 </li>

@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :users
 
   # 教科ネタ
-  resources :articles, only: [:create, :destroy]
+  resources :articles, only: [:show, :new, :edit, :create, :update, :destroy]
   # カーシェア
   resources :cars, only: [:show, :new, :edit, :create, :update, :destroy]
 

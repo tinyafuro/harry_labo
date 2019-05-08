@@ -1,0 +1,19 @@
+<div id="contents">
+
+  <!-- 情報ヘッダー（投稿数、新規登録ボタン -->
+  <ul class="profile-header">
+    <li>投稿数：<%= @articles.count %>件</li>
+    <%= link_to "新規登録", new_article_path, class: "my-btn" %>
+  </div>
+
+  <!-- 自分が投稿した情報 -->
+  <div>
+    <h1>教科ネタ投稿情報</h1>
+    <ol class="articles">
+      <%= render @articles %>
+    </ol>
+    <div style="text-align: center;">
+      <%= will_paginate @articles %>
+    </div>
+  </div>
+</div>

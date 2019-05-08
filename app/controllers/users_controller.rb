@@ -12,12 +12,18 @@ class UsersController < ApplicationController
     # 教科別記事
     @articles = @user.article.paginate(page: params[:page])   # 記事一覧用変数
     @article = current_user.article.build if logged_in?       # 記事投稿用空インスタンス変数
+
+
     # カーシェア
     @cars = @user.car.paginate(page: params[:page], per_page: 8)   # 記事一覧用変数
     @car = current_user.car.build if logged_in?       # 記事投稿用空インスタンス変数
 
     #現在のURLを記憶
     before_location user_path
+
+    # 教科別記事用のプロフィール画面
+    # *** 教科別で表示するときだけコメント外す ***
+    render template: 'users/show_article'
 
   end
 

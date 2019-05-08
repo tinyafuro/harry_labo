@@ -1,0 +1,29 @@
+<!-- 投稿データ詳細画面 -->
+<ul class="article-detail">
+
+  <div class="detail_top">
+    <!--戻るボタン（ユーザープロフィール画面へ戻る）-->
+    <%= link_to "戻 る", redirect_before_url, class: "detail_btn" %>
+
+    <% if current_user?(@article.user) %>
+      <!--編集ボタン-->
+      <%= link_to "編 集", edit_article_path(@article), class: "detail_btn" %>
+      <!--削除ボタン-->
+      <%= link_to "削 除", @article, method: :delete, data: { confirm: "You sure?" }, class: "detail_btn" %>
+    <% end %>
+  </div>
+
+  <!-- タイトル -->
+  <div class="detail_title"><%= @article.title %></div>
+
+  <!-- 教科タグと内容を2カラムレイアウト -->
+  <div class="row detail-main">
+    <div class="col-md-2">
+      <div class="detail_subject"><%= @article.subject %></div>
+    </div>
+    <div class="col-md-10">
+      <div class="detail_body"><%= @article.body %></div>
+    </div>
+  </div>
+
+</ul>
