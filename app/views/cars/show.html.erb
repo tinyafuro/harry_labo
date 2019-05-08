@@ -1,0 +1,36 @@
+<!-- 投稿データ詳細画面 -->
+<ul class="car-detail">
+
+  <ul class="detail_top">
+    <!--戻るボタン（ユーザープロフィール画面へ戻る）-->
+    <%= link_to "戻 る", redirect_before_url, class: "detail_btn" %>
+
+    <% if current_user?(@car.user) %>
+
+      <!--編集ボタン-->
+      <%= link_to "編 集", edit_car_path(@car), class: "detail_btn" %>
+      <!--削除ボタン-->
+      <%= link_to "削 除", @car, method: :delete, data: { confirm: "You sure?" }, class: "detail_btn" %>
+
+    <% end %>
+
+  </ul>
+
+  <div class="detail_title"><%= @car.title %></div>
+
+  <div class="row detail-main">
+    <div class="col-md-4">
+      <!-- イメージ -->
+      <%= image_tag @car.picture.url if @car.picture? %>
+    </div>
+    <div class="col-md-8">
+      <div class="detail_model"><%= @car.carmodel %></div>
+      <div class="detail_body"><%= @car.body %></div>
+    </div>
+  </div>
+
+  <div class="detail_size"><%= @car.carsize %></div>
+
+  <div class="detail_other"><%= @car.other %></div>
+
+</ul>

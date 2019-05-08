@@ -1,0 +1,46 @@
+@import "./custom.scss";
+
+/*================================================
+ *  ユーザープロフィール画面
+ ================================================*/
+
+ .profile-header {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  font-size: calc(120% + 0.7vw);
+  font-weight: bold;
+  color: black;
+  border: 2px solid $my-color2;
+  background: $my-color2;
+  li {
+    list-style: none;
+    margin: auto;
+  }
+  // border: solid 1px red;
+}
+
+.my-btn {
+  width: auto;
+  height: 48px;
+  margin: 20px 50px;
+  padding: 8px 24px;
+  font-family: sans-serif;
+  font-size: calc(50% + 0.5vw);
+  font-weight: bold;
+  color: $my-color3;
+  text-align: center;
+  letter-spacing: 6px;
+  border: 2px solid $my-color3;
+  border-radius: 24px;
+  background-color: white;
+  outline: none;
+  box-sizing: border-box;
+  transition: .4s;
+
+  &:hover {
+    font-size: calc(50% + 0.4vw);
+    color: white;
+    background-color: $my-color3;
+  }
+}

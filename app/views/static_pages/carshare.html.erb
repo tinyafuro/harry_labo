@@ -4,14 +4,10 @@
 
 <div id="contents">
 
-  <!-- Articleのフィード -->
-  <% if logged_in? %>
-
-    <div id="feed-list-area">
-      <h1><%= @search %></h1>
-      <%= render 'shared/feed' %>
-    </div>
-
-  <% end %>
+  <!-- Carのフィード -->
+  <div>
+    <h1>カーシェア投稿情報</h1>
+    <%= render 'shared/feed_car' %>
+  </div>
 
 </div>

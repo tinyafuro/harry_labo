@@ -1,29 +1,26 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    
-    <!-- 投稿フォーム -->
-    <section class="article_form">
-      <%= render 'shared/article_form' %>
-    </section>
 
-  </aside>
+<div id="contents">
 
-  <!-- Article情報 -->
-  <div class="col-md-8">
-    <% if @user.article.any? %>
-      <h3>Articles (<%= @user.article.count %>)</h3>
-        <ol class="articles">
-          <%= render @articles %>
-        </ol>
-      <%= will_paginate @articles %>
-    <% end %>
+  <!-- 情報ヘッダー（投稿数、予約数、新規登録ボタン -->
+  <ul class="profile-header">
+    <li>投稿数：<%= @cars.count %>件</li>
+    <li>予約数：10件</li>
+    <%= link_to "新規作成", new_car_path, class: "my-btn" %>
+  </div>
+
+
+  <!-- 自分が投稿した情報 -->
+  <div>
+    <h1>カーシェア投稿情報</h1>
+    <ol class="cars">
+      <%= render @cars %>
+    </ol>
+    <div style="text-align: center;">
+      <%= will_paginate @cars %>
+    </div>
   </div>
 
 </div>
+
+

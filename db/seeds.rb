@@ -50,3 +50,22 @@ users = User.order(:created_at).take(6)
   end
   users.each { |user| user.article.create!(title: article_title, body: article_body, subject: article_subject) }
 end
+
+#最初の6アカウントへ50個分のカーシェア投稿情報を追加
+users = User.order(:created_at).take(6)
+50.times do |i|
+  Faker::Config.locale = 'ja'
+  car_title = Faker::University.name
+  car_body = Faker::Address.state
+  car_size = Faker::Company.name
+  car_other = Faker::Commerce.department(5)
+  case i % 3
+    when 0
+      car_model = "プリウス"
+    when 1
+      car_model = "アクア"
+    when 2
+      car_model = "リーフ"
+  end
+  users.each { |user| user.car.create!(title: car_title, body: car_body, carmodel: car_model, carsize: car_size, other: car_other) }
+end

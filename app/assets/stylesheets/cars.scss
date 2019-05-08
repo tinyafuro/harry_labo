@@ -1,0 +1,330 @@
+@import "./custom.scss";
+
+/*================================================
+ *  投稿記事のリスト
+ ================================================*/
+
+ .cars {
+  
+  width: 100%;
+  margin: auto;
+  padding-left: 5%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  border: 2px solid $my-color2;
+  color: black;
+  background: $my-color2;
+
+  li {
+    width: 20%;
+    margin: 2.5rem 2rem;
+    padding: 0.5rem 2rem;
+    border: 2px solid $my-color2;
+    border-radius: .8rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  .car_top {
+    display: flex;
+    overflow: hidden; 
+  }
+
+  .car_title {
+    font-size: calc(50% + 0.5vw);
+    font-weight: bold;
+  }
+
+  .car_model {
+    margin-left: 10px;
+    padding: 2px 6px;
+    font-size: calc(40% + 0.3vw);
+    color: #fff;
+    text-align: center;
+    border-radius: .8rem;
+    background-color: $my-color3;
+  }
+
+  // アスペクト比固定
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+  }
+
+  .car_size {
+    display: block;
+    font-size: calc(40% + 0.4vw);
+  }
+
+  // 詳細を見るボタン
+  .car_details_btn {
+    width: 80%;
+    height: 32px;
+    margin: 10px 10%;
+    padding: 4px 8px;
+    font-family: sans-serif;
+    font-size: calc(50% + 0.5vw);
+    font-weight: bold;
+    text-decoration: none;
+    color: $my-color3;
+    text-align: center;
+    letter-spacing: 2px;
+    border: 2px solid $my-color3;
+    border-radius: 16px;
+    background-color: white;
+    outline: none;
+    box-sizing: border-box;
+    transition: .4s;
+  
+    &:hover {
+      font-size: calc(50% + 0.4vw);
+      color: white;
+      background-color: $my-color3;
+    }
+  }
+}
+
+// レスポンシブ（iPad）
+@media screen and (max-width: 1024px) {
+  .cars li {
+    width: 45%;
+  }
+}
+
+// レスポンシブ（iPhone）
+@media screen and (max-width: 896px) {
+
+  .cars li {
+    width: 100%;
+
+    .car_title {
+      font-size: calc(100% + 0.7vw);
+    }
+
+    .car_model {
+      margin-left: 10px;
+      padding: 5px 8px;
+      font-size: calc(60% + 0.5vw);
+      border-radius: 1.2rem;
+    }
+
+    .car_size {
+      font-size: calc(60% + 0.5vw);
+    }
+  }
+}
+
+
+
+/*================================================
+ *  投稿記事の詳細ページ
+ ================================================*/
+
+.car-detail {
+  
+  width: auto;
+  margin: auto;
+  padding: 0px;
+  display: block;
+  border: 2px solid $my-color2;
+  color: black;
+  background: white;
+
+  // ボタンを配置するヘッダ領域
+  .detail_top {
+    padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    background-color: $my-color2;
+    .detail_btn {
+      width: 10%;
+    }
+  }
+
+  //タイトル
+  .detail_title {
+    padding: 30px 0;
+    display: flex;
+    justify-content: center;
+    font-size: calc(150% + 0.5vw);
+    font-weight: bold;
+    letter-spacing: 3px;
+    border-bottom: thin solid rgb(236, 236, 236);
+  }
+
+  .detail-main {
+    padding: 30px 0;
+    display: flex;
+    margin-left: 5rem;
+
+    // モデル
+    .detail_model {
+      width: 10rem;
+      margin: 1rem 0;
+      padding: 4px 6px;
+      font-size: calc(70% + 0.3vw);
+      color: #fff;
+      text-align: center;
+      border-radius: .2rem;
+      background-color: $my-color3;
+    }
+
+    // ボディ
+    .detail_body {
+      // width: 10rem;
+      margin: 2rem 8rem 0 0;
+      font-size: calc(80% + 0.3vw);
+    }
+  }
+
+  // サイズ
+  .detail_size {
+    margin: 1rem 5rem;
+    padding: 10px 16px;
+    display: flex;
+    font-size: calc(70% + 0.4vw);
+    background-color: rgb(236, 236, 236);
+  }
+
+  // その他
+  .detail_other {
+    margin: 1rem 5rem;
+    padding: 10px 16px;
+    display: flex;
+    font-size: calc(50% + 0.4vw);
+  }
+
+  // イメージ
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 5px 0;
+  }
+
+  // ボタン
+  .detail_btn {
+    width: 50%;
+    height: 32px;
+    margin: 10px 10%;
+    padding: 4px 8px;
+    font-family: sans-serif;
+    font-size: calc(50% + 0.5vw);
+    font-weight: bold;
+    text-decoration: none;
+    color: $my-color3;
+    text-align: center;
+    letter-spacing: 2px;
+    border: 2px solid $my-color3;
+    border-radius: 16px;
+    background-color: white;
+    outline: none;
+    box-sizing: border-box;
+    transition: .4s;
+
+    &:hover {
+      font-size: calc(50% + 0.4vw);
+      color: white;
+      background-color: $my-color3;
+    }
+  }
+}
+
+
+/*================================================
+ *  新規登録・更新フォーム
+ ================================================*/
+
+ // フォーム全体
+ .carshare-form {
+  position: relative;
+	width: 70%;
+  margin: -10% 15% 10px 15%;
+
+  // ラベル
+  label {
+    margin-top:3rem;
+    margin-left:0.8rem;
+    font-size: calc(80% + 0.5vw);
+    color: black;
+  }
+
+  //インプットフィールド
+  input {
+    margin: 4px 0;
+    padding-left: 20px;
+    width: 100%;
+    height: 40px;
+    font-size: calc(50% + 0.6vw);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2.5px;
+    border: 2px solid $my-color3;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  //テキストエリア
+  textarea {
+    width: 100%;
+    height: 80px;
+    font-size: calc(50% + 0.6vw);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2.5px;
+    margin: 4px 0;
+    padding-left: 20px;
+    border: 2px solid $my-color3;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-color: #da3c41;
+  }
+
+  // ボタン
+  input[type=submit] {
+    width: 60%;
+    margin: 40px 20%;
+    font-size: calc(50% + 0.5vw);
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: $my-color3;
+    border: 2px solid $my-color3;
+    background-color: white;
+    transition: .4s;
+  }
+
+  input[type=submit]:hover {
+    font-size: calc(50% + 0.4vw);
+    color: white;
+    background-color: $my-color3;
+  }
+
+  input[type=file] {
+    margin: 3rem 0;
+    padding-left: 20px;
+    width: 100%;
+    height: 5rem;
+    font-size: calc(50% + 0.4vw);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    letter-spacing: 2.5px;
+    border: none;
+  }
+}

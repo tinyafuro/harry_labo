@@ -1,0 +1,23 @@
+<li id="car-<%= car.id %>">
+
+  <div class="car_top">
+    <!-- タイトル -->
+    <span class="car_title"><%= car.title %></span>
+    <!-- 車種 -->
+    <span class="car_model"><%= car.carmodel %></span>
+  </div>
+
+  <!-- イメージ 
+
+  <img src="../assets/car_sample.jpg" alt="" width="200" height="120"></a>
+  -->
+  <%= image_tag car.picture.url if car.picture? %>
+
+  <!-- サイズ（定員など） -->
+  <span class="car_size"><%= car.carsize %></span>
+
+  <!-- 詳細情報ボタン -->
+  <%= link_to "詳細を見る", car, class: "car_details_btn"%>
+
+</li>
+  

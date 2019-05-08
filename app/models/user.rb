@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :article, dependent: :destroy
+  has_many :car, dependent: :destroy
 
   attr_accessor :remember_token
 
@@ -41,9 +42,14 @@ class User < ApplicationRecord
     update_attribute(:remember_digest, nil)
   end
 
-  # 試作feedの定義
+  # 教科記事のfeed
   def feed
     Article.where("user_id = ?", id)
+  end
+
+  # カーシェア記事のfeed
+  def feed_car
+    Car.where("user_id = ?", id)
   end
 
 end
