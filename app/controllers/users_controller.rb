@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
     # 教科別記事用のプロフィール画面
     # *** 教科別で表示するときだけコメント外す ***
-    render template: 'users/show_article'
+    # render template: 'users/show_article'
 
   end
 

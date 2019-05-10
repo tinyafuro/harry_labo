@@ -1,0 +1,2 @@
+$("#reserve_form").html("<%= escape_javascript(render('cars/unreserve')) %>");
+$("#reserve_count").html('<%= @car.reservers.count %>');

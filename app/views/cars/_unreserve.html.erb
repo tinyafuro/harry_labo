@@ -1,0 +1,3 @@
+<%= form_for(current_user.reserve.find_by(car_id: @car.id), html: { method: :delete }, remote: true) do |f| %>
+  <%= f.submit "取消", class: "detail_btn unreserve_btn" %>
+<% end %>

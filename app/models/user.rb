@@ -1,9 +1,12 @@
 class User < ApplicationRecord
   has_many :article, dependent: :destroy
   has_many :car, dependent: :destroy
+
   has_many :good, dependent: :destroy
+  has_many :reserve, dependent: :destroy
 
   has_many :gooding, through: :good, source: :article
+  has_many :reserving, through: :reserve, source: :car
 
   attr_accessor :remember_token
 
@@ -68,6 +71,22 @@ class User < ApplicationRecord
   # 指定した記事を既にいいねしてたらtrueを返す
   def gooding?(article)
     gooding.include?(article)
+  end
+
+
+  # 投稿記事を予約する
+  def reserveAdd(car)
+    reserving << car
+  end
+
+  # 予約を解除する
+  def unReserve(car)
+    Reserve.find_by(car_id: car.id).destroy
+  end
+
+  # 指定した記事を既に予約してたらtrueを返す
+  def reserving?(car)
+    reserving.include?(car)
   end
 
 end

@@ -37,9 +37,27 @@ Rails.application.routes.draw do
   # いいねモデルのルーティング
   resources :goods, only: [:create, :destroy]
 
+
+
+
   # カーシェア
   resources :cars, only: [:show, :new, :edit, :create, :update, :destroy]
 
+  # 予約した数を求める
+  resources :users do
+    member do
+      get :reserving
+    end
+  end
 
+  # 予約された数を求める
+  resources :cars do
+    member do
+      get :reservers
+    end
+  end
+
+  # 予約モデルのルーディング
+  resources :reserves, only: [:create, :destroy]
 
 end

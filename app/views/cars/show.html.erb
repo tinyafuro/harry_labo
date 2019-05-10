@@ -11,7 +11,12 @@
       <%= link_to "編 集", edit_car_path(@car), class: "detail_btn" %>
       <!--削除ボタン-->
       <%= link_to "削 除", @car, method: :delete, data: { confirm: "You sure?" }, class: "detail_btn" %>
-
+    <% else %>
+      <!-- 予約ボタン -->
+      <div>
+        <%= render 'reserve_form' if logged_in? %>
+      </div>
+      <div id="reserve_count"><%= @car.reservers.count %></div>
     <% end %>
 
   </ul>

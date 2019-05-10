@@ -1,5 +1,8 @@
 class Car < ApplicationRecord
   belongs_to :user
+  has_many :reserve, dependent: :destroy
+  has_many :reservers, through: :reserve, source: :user
+
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :user_id, presence: true
