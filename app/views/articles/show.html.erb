@@ -10,6 +10,12 @@
       <%= link_to "編 集", edit_article_path(@article), class: "detail_btn" %>
       <!--削除ボタン-->
       <%= link_to "削 除", @article, method: :delete, data: { confirm: "You sure?" }, class: "detail_btn" %>
+    <% else %>
+      <!-- いいねボタン -->
+      <div>
+        <%= render 'good_form' if logged_in? %>
+      </div>
+      <div id="good_count"><%= @article.gooders.count %></div>
     <% end %>
   </div>
 

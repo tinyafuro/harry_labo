@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   has_many :article, dependent: :destroy
   has_many :car, dependent: :destroy
+  has_many :good, dependent: :destroy
+
+  has_many :gooding, through: :good, source: :article
 
   attr_accessor :remember_token
 
@@ -50,6 +53,21 @@ class User < ApplicationRecord
   # カーシェア記事のfeed
   def feed_car
     Car.where("user_id = ?", id)
+  end
+
+  # 投稿記事をいいねする
+  def goodAdd(article)
+    gooding << article
+  end
+
+  # いいねを解除する
+  def unGood(article)
+    Good.find_by(article_id: article.id).destroy
+  end
+
+  # 指定した記事を既にいいねしてたらtrueを返す
+  def gooding?(article)
+    gooding.include?(article)
   end
 
 end

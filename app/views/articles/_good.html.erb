@@ -1,0 +1,13 @@
+<%= form_for(current_user.good.build, remote: true) do |f| %>
+  <div>
+    <%= hidden_field_tag :article_id, @article.id %>
+  </div>
+  
+  <!-- イメージ画像付きのsubmitボタン -->
+  <div class="icon_image">
+    <%= button_tag type: :submit do %>
+      <%= image_tag "good_icon0.png", size: '32x32' %>
+    <% end %>
+  </div>
+
+<% end %>

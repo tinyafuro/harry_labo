@@ -42,6 +42,9 @@ Rails.application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # Ignore /public/assets
+  config.serve_static_assets = false
+
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 

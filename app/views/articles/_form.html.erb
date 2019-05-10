@@ -9,8 +9,9 @@
 
   <div>
     <%= f.label "教科" %>
-    <%= f.text_field :subject %>
+    <%= f.select :subject, {"国語" => "国語", "数学" => "数学", "英語" => "英語", "理科" => "理科", "社会" => "社会"}, :include_blank => true %>
   </div>
+
 
   <div>
     <%= f.label "詳細説明" %>

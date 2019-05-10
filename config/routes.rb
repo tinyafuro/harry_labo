@@ -19,7 +19,27 @@ Rails.application.routes.draw do
 
   # 教科ネタ
   resources :articles, only: [:show, :new, :edit, :create, :update, :destroy]
+  
+  # いいねした数を求める
+  resources :users do
+    member do
+      get :gooding
+    end
+  end
+
+  # いいねされた数を求める
+  resources :articles do
+    member do
+      get :gooders
+    end
+  end
+
+  # いいねモデルのルーティング
+  resources :goods, only: [:create, :destroy]
+
   # カーシェア
   resources :cars, only: [:show, :new, :edit, :create, :update, :destroy]
+
+
 
 end

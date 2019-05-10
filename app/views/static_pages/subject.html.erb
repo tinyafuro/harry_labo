@@ -1,4 +1,4 @@
-<%= javascript_include_tag 'scroll_animation' %>
+
 
 <% provide(:title, "Subject") %>
 
@@ -124,14 +124,11 @@
   </section>
 
   <!-- Articleのフィード -->
-  <% if logged_in? %>
+  <div id="feed-list-area">
+    <h1><%= @search %></h1>
+    <%= render 'shared/feed' %>
+  </div>
 
-    <div id="feed-list-area">
-      <h1><%= @search %></h1>
-      <%= render 'shared/feed' %>
-    </div>
-
-  <% end %>
 
 </div>
 

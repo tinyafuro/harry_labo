@@ -1,0 +1,9 @@
+<%= form_for(current_user.good.find_by(article_id: @article.id), html: { method: :delete }, remote: true) do |f| %>
+  <div class="icon_image">
+  
+    <!-- イメージ画像付きのsubmitボタン -->
+    <%= button_tag type: :submit do %>
+      <%= image_tag "good_icon.png", size: '32x32' %>
+    <% end %>
+  </div>
+<% end %>

@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     # 教科別記事
     @articles = @user.article.paginate(page: params[:page])   # 記事一覧用変数
     @article = current_user.article.build if logged_in?       # 記事投稿用空インスタンス変数
+    
 
 
     # カーシェア
