@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<!-- 投稿データ詳細画面 -->
+<div class="event-detail">
+
+  <div class="detail_top">
+    <!--戻るボタン（カーシェア情報画面へ戻る）-->
+    <%= link_to '戻る', redirect_before_url, class: "detail_btn" %>
+  </div>
+
+  <div class="detail-main">
+
+    <!-- 予約日 -->
+    <div class="detail_date"><%= @event.start_date %></div>
+
+    <!-- カーシェア情報 -->
+    <div class="detail_car_title"><%= @car.title %></div>
+
+    <!-- ユーザー名 -->
+    <div class="detail_user_name"><%= @user.name %></div>
+
+    <!-- 予約解除ボタン -->
+    <% if @user == current_user %>
+      <%= link_to '予約を取り消す', @event, method: :delete, data: { confirm: '予約を取り消してよろしいですか？'}, class: "detail_btn" %>
+    <% end %>
+    
+  </div>
+
+</div>

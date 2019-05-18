@@ -4,11 +4,14 @@
   <ul class="detail_top">
     <!--戻るボタン（ユーザープロフィール画面へ戻る）-->
     <%= link_to "戻 る", redirect_before_url, class: "detail_btn" %>
+    <% if logged_in? %>
+      <%= link_to "予約する", contact_path, class: "detail_btn" %>
+    <% end %>
 
     <% if current_user?(@car.user) %>
 
       <!--編集ボタン-->
-      <%= link_to "編 集", edit_car_path(@car), class: "detail_btn" %>
+      <%= link_to "編 集", edit_car_path, class: "detail_btn" %>
       <!--削除ボタン-->
       <%= link_to "削 除", @car, method: :delete, data: { confirm: "You sure?" }, class: "detail_btn" %>
     <% else %>

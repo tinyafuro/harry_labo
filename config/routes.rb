@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'sessions/new'
 
   root 'static_pages#home'
@@ -59,5 +60,10 @@ Rails.application.routes.draw do
 
   # 予約モデルのルーディング
   resources :reserves, only: [:create, :destroy]
+
+  # カレンダーで管理する予約情報ルーティング
+  resources :events
+  get '/rlist',   to: 'events#rlist'
+  get '/rmanage',   to: 'events#rmanage'
 
 end

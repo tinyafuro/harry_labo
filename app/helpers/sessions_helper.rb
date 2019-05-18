@@ -71,4 +71,14 @@ module SessionsHelper
     session[:before_forwarding_url] = current_url
   end
 
+  # 予約カレンダーを開きたいcar_idを保持する
+  def set_car_id(car_id)
+    session[:car_id] = car_id
+  end
+
+  # 保持しておいたcar_idを取得
+  def get_car_id
+    session[:car_id]
+  end
+
 end

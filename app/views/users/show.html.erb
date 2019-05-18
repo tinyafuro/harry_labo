@@ -5,7 +5,8 @@
   <!-- 情報ヘッダー（投稿数、予約数、新規登録ボタン -->
   <ul class="profile-header">
     <li>投稿数：<%= @cars.count %>件</li>
-    <li>予約数：10件</li>
+    <%= link_to "予約リスト", rlist_path, class: "my-btn" %>
+    <%= link_to "予約管理", rmanage_path, class: "my-btn" %>
     <%= link_to "新規作成", new_car_path, class: "my-btn" %>
   </div>
 

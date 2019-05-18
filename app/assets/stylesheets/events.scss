@@ -1,0 +1,197 @@
+@import "./custom.scss";
+
+/*================================================
+ *  予約情報の詳細画面
+ ================================================*/
+
+ // 予約解除ボタン
+.detail_btn {
+  width: 100%;
+  height: 48px;
+  margin: 30px;
+  padding: 8px 16px;
+  font-family: sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: $my-color3;
+  text-align: center;
+  letter-spacing: 2px;
+  border: 2px solid $my-color3;
+  border-radius: 32px;
+  background-color: white;
+  outline: none;
+  box-sizing: border-box;
+  transition: .4s;
+
+  &:hover {
+    font-size: 1.8rem;
+    color: white;
+    text-decoration: none;
+    background-color: $my-color3;
+  }
+}
+
+ .event-detail {
+  
+  width: 50%;
+  height: 540px;
+  margin: -5% 25% 50px 25%;
+  padding: 0px;
+  display: block;
+  border: 16px solid $my-color2;
+  border-radius: 8px;
+  color: black;
+  background: white;
+
+  // ボタンを配置するヘッダ領域
+  .detail_top {
+    // padding: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    background-color: $my-color2;
+    .detail_btn {
+      width: 15%;
+      height: 32px;
+      margin: 15px 15px 15px 30px;
+      padding: 4px 4px;
+      font-size: 1.5rem;
+    }
+  }
+
+  // メインエリア
+  .detail-main {
+    display: block;
+    text-align: center;
+
+    // 予約日
+    .detail_date {
+      width: auto;
+      margin: 50px 30%;
+      padding: 8px;
+      font-size: 2.5rem;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 2px;
+      border-radius: 8px;
+      background-color: $my-color3;
+    }
+
+    // カータイトル、ユーザー名
+    .detail_car_title {
+      width: auto;
+      margin-top: 50px;
+      font-size: 2.5rem;
+    }
+
+    // カータイトル、ユーザー名
+    .detail_user_name {
+      width: auto;
+      margin-top: 50px;
+      margin-bottom: 70px;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+
+/*================================================
+ *  カレンダーのレイアウト
+ ================================================*/
+
+.calendar_layout {
+  margin: -50px 0 0 0;
+  padding: 50px 200px 200px 200px;
+  background: white;
+}
+
+// カレンダーに登録済みデータの開始時間を非表示にする
+.fc-time{
+  display : none;
+}
+
+
+
+/*================================================
+ *  予約リストのスタイル
+ ================================================*/
+
+ .rlist {
+  
+  width: 100%;
+  margin: -50px 0 30px 0;
+  padding: 0;
+  list-style: none;
+  border: 2px solid $my-color2;
+  background: $my-color2;
+
+  li {
+    display: flex;
+    widows: 60%;
+    margin: 30px 20%;
+    padding: 20px 30px;
+    border: 2px solid $my-color2;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: .8rem;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+  }
+
+  .car_title {
+    width: 50%;
+    margin: auto;
+    font-size: 2rem;
+  }
+
+  .user_name {
+    width: 40%;
+    margin: auto;
+    font-size: 1.8rem;
+    text-align: left;
+  }
+
+  .event_date {
+    width: auto;
+    margin: auto;
+    padding: 8px 32px;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+    border-radius: .8rem;
+    background-color: $my-color3;
+
+    a {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  // ボタン
+  .rlist_top {
+    height: 30px;
+    padding: 30px 0 0 250px;
+
+    .rlist_btn {
+      height: 48px;
+      padding: 8px 32px;
+      font-family: sans-serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: $my-color3;
+      text-align: center;
+      letter-spacing: 2px;
+      border: 2px solid $my-color3;
+      border-radius: 2rem;
+      background-color: white;
+      outline: none;
+      box-sizing: border-box;
+      transition: .4s;
+  
+      &:hover {
+        color: white;
+        background-color: $my-color3;
+      }
+    }
+  }
+}
